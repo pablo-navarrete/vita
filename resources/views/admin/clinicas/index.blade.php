@@ -54,7 +54,7 @@
             </div>
 
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="">
                     <div class="m-2">
                         <table id="clinicas-table" class="table table-striped table-bordered table-hover table-rounded">
                             <thead class="text-center">
@@ -427,7 +427,7 @@
                         render: function(data, type, row) {
                             return `
                             <div class="dropdown text-center">
-                                <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-light border border-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     Opciones
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">

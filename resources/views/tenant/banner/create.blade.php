@@ -7,7 +7,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <style>
 
+        .miga{
+            text-decoration: none; 
+            color:gray;
+        }
 
+        .miga:hover{
+            color: rgb(21, 146, 242);;
+        }
 
 </style>
 @endsection
@@ -16,10 +23,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <h3 class="mb-0 my-auto">Crear Banner</h3>
+            <h3 class="mb-4 mt-3">Crear Banner</h3>
         </div>
-        <div class="col-md-4">
-            <p class="text-end mb-0 my-auto"><a href="{{ route('tenant.banner.index') }}">Banner</a> / Crear Banner</p>
+        <div class="col-4 text-end mt-4">
+            <a href="{{ route('tenant.paciente.index') }}" class="miga">Listado de Banners</a> / <span style="color: rgb(21, 146, 242);">Crear Banner</span>
+
         </div>
     </div>
     
@@ -33,9 +41,9 @@
             </div>
             <form id="bannerForm" method="POST" action="{{ route('tenant.banner.store') }}" enctype="multipart/form-data">
                 @csrf
-            <div class="card-body row">
+            <div class="card-body ">
                
-                   
+                <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="title" class="form-label">Nombre del Banner</label>
@@ -79,10 +87,10 @@
                       
                     </div>
                     <hr class="my-3">
-                    <div class="mb-3 text-end">
+                    <div class=" text-end">
                         <button class="btn btn-primary"id="saveButton">Guardar</button>
                     </div>
-              
+                </div>
             </div>
         </form>
         </div>

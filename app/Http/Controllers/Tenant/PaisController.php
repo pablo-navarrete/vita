@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class MedicoController extends Controller
+class PaisController extends Controller
 {
     //
 }

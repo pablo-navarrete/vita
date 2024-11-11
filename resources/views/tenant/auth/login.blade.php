@@ -3,7 +3,7 @@
     Iniciar sesión
 @endsection
 @section('content')
-<div class="container">
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -33,22 +33,12 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Recordarme') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Iniciar Sesión') }}
                                 </button>
 
                                 @if (Route::has('password.request'))

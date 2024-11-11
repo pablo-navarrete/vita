@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_cita')->constrained('citas')->onDelete('cascade');
             $table->foreignId('id_paciente')->constrained('pacientes')->onDelete('cascade');
-            $table->foreignId('id_medico')->constrained('medicos')->onDelete('cascade');
+            $table->foreignId('id_users')->constrained('users')->onDelete('cascade');
+            $table->foreignId('id_preconsulta')->constrained('pre_consultas')->onDelete('cascade');
             $table->text('motivo_consulta');
             $table->text('observaciones')->nullable();
             $table->timestamps();

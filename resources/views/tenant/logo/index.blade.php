@@ -1,4 +1,8 @@
 @extends('layouts.menuTenant')
+@section('title')
+    Logo
+@endsection
+
 @section('css_before')
 <link href="https://unpkg.com/filepond/dist/filepond.min.css" rel="stylesheet">
 <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
@@ -11,8 +15,8 @@
        
 
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
+            <div class="card" >
+                <div class="card-header" >
                         {{ __('Logo en todo el sistema') }}
                     
                     
@@ -44,7 +48,10 @@
                                     <option value="0">Desactivado</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+
+                            </div>
                         </form>
                     </div>
                     

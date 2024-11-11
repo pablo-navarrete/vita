@@ -14,7 +14,8 @@ class Consulta extends Model
     protected $fillable = [
         'id_cita',
         'id_paciente',
-        'id_medico',
+        'id_user',
+        'id_preconsulta',
         'motivo_consulta',
         'observaciones',
     ];
@@ -31,7 +32,7 @@ class Consulta extends Model
 
     public function medico()
     {
-        return $this->belongsTo(Medico::class, 'id_medico');
+        return $this->belongsTo(User::class, 'id_user');
     }
 
     public function diagnostico()

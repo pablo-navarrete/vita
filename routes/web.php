@@ -13,14 +13,13 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 //web
 Route::get('/', [WebController::class, 'index'])->name('admin.web.inicio');
-Route::get('/acerca-de', [WebController::class, 'about'])->name('admin.web.about');
+Route::get('/sobre-vita', [WebController::class, 'about'])->name('admin.web.about');
 Route::get('/servicios', [WebController::class, 'service'])->name('admin.web.service');
 Route::get('/contactar', [WebController::class, 'contact'])->name('admin.web.contact');
 
 Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login/intro', [LoginController::class, 'login'])->name('admin.login.intro');
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
-
 
 // Agrupando rutas que requieren autenticación
 Route::middleware(['web','auth']) 

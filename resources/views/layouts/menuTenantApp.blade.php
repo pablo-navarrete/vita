@@ -44,7 +44,24 @@
         .nav-link.active {
             color: rgb(21, 146, 242) !important;
         }
+        .footer {
+            padding: 20px 0;
+            background-color: #fff;
+            border-top: 1px solid #dee2e6;
+            width: 100%;
+            margin-top: auto; /* Mantiene el footer al final del contenido */
+            position: relative; /* Asegúrate de que el footer tenga una posición relativa */
+            z-index: 10; /* Mayor que el sidebar si está posicionado */
+        }
 
+        .footer .text-muted {
+            color: #666;
+        }
+
+        .footer span {
+            color: rgb(21, 146, 242);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +81,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto ">
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tenant.web.inicio') }}" target="_blank"><i class="fas fa-globe"></i></a>
@@ -115,10 +132,17 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 " style="height: 600px; background-image: url('{{ url('assets/img/medico2.jpg') }}'); background-size: cover; background-position: center;">
             @yield('content')
         </main>
     </div>
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container ">
+                <span class="text-muted">&copy; {{ date('Y') }} <span>{{ __('VITA') }}</span>. Todos los derechos
+                    reservados.</span>
+            </div>
+        </footer>
     @yield('js_after')
 </body>
 </html>

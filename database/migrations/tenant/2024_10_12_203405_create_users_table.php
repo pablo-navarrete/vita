@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('rut')->unique();
             $table->string('nombre');
@@ -22,7 +22,15 @@ return new class extends Migration
             $table->string('telefono')->nullable();
             $table->string('email')->unique();
             $table->string('direccion')->nullable();
-            $table->string('pais')->nullable();
+            $table->foreignId('id_pais')->constrained('pais')->onDelete('cascade');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->unsignedBigInteger('especialidad_id')->nullable(); // Columna foránea
+            
+            // Definición de la relación foránea
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('set null');
+            
             $table->timestamps();
         });
     }
@@ -32,6 +40,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['especialidad_id']); // Eliminar la relación foránea
+        });
+
+        Schema::dropIfExists('users');
     }
 };

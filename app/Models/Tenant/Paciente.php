@@ -21,7 +21,7 @@ class Paciente extends Model
         'telefono',
         'email',
         'direccion',
-        'pais'
+        'id_pais'
     ];
 
     public function citas()
@@ -43,4 +43,10 @@ class Paciente extends Model
     {
         return $this->hasMany(Pago::class, 'id_paciente');
     }
+
+    public function pais()
+    {
+        return $this->belongsTo(Pais::class, 'id_pais');
+    }
+    
 }

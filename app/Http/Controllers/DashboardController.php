@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clinica;
+use App\Models\Logo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +17,9 @@ class DashboardController extends Controller
         $clinicasPagados= Clinica::all()->where('estado_pago',1)->count();
         $clinicasAtrasados= Clinica::all()->where('estado_pago',0)->count();
         $clinicasMes= Clinica::all()->where('mes_gratis',1)->count();
+        $logo = Logo::where('status',1)->first();
   
-        return view('admin.dashboard.index', compact('clinicasTotal','clinicasStatusActive','clinicasStatusInactive','clinicasPagados','clinicasAtrasados','clinicasMes'));
+        return view('admin.dashboard.index', compact('clinicasTotal','clinicasStatusActive','clinicasStatusInactive','clinicasPagados','clinicasAtrasados','clinicasMes','logo'));
     }
 
     

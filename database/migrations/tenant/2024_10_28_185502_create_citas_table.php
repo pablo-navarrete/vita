@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_paciente')->constrained('pacientes')->onDelete('cascade');
-            $table->foreignId('id_medico')->constrained('medicos')->onDelete('cascade');
+            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->date('fecha');
             $table->time('hora');
-            $table->string('estado')->default('pendiente'); // Ej. 'pendiente', 'completada', 'cancelada'
+            $table->string('estado'); // Ej. 'pendiente', 'completada', 'cancelada'
             $table->text('observaciones')->nullable();
+            $table->string('estado_pago');
             $table->timestamps();
         });
     }
